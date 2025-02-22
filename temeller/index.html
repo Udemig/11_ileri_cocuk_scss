@@ -7,6 +7,15 @@
     <!-- * Css Link -->
     <link rel="stylesheet" href="/styles/style.css" />
     <!-- `Live Sass Compiler` ın bizim için oluşturduğu css dosyasını bağlarız. -->
+
+    <!-- * Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- * Scss Nedir ?
@@ -18,9 +27,118 @@
     ? Biz nasıl scss kodlaması yapacağız ?
 
     Scss kodlarını tarayıcılar okuyamadığında bunları css koduna çevirecek bir eklenti kullanırız.Bu eklenti `Live Sass Compiler` dır.Bu eklenti sayesinde scss'in avantajlarında yararlanarak kodlama yapar ve bunları css'e çeviririz.
+
+
+
+
+    ! Scss dosyasındaki kodlar `Live Sass Compiler` eklentisi tarafından css koduna çevirildiğinden dolayı biz her dosya aç kapa yapınca Watch sass kısmına tıklamamız gerekecektir.
               
+
+
               
               -->
-    <h1 class="title">Udemig Akademi</h1>
+
+    <!-- * Scss Özellikleri -->
+
+    <!-- 1-)Variables (Değişkenler) -->
+    <!-- 2-)Extend Yapısı (Miras Alma) -->
+    <!-- 3-)Nesting Yazım (İç içe yazım) -->
+    <!-- 4-)Modüler Dosya Yapısı  -->
+    <!-- 5-)Mixin  -->
+
+    <!-- ? Variables Örneği -->
+    <h1 class="title-1">Udemig</h1>
+    <h2 class="title-2">Udemig</h2>
+    <h3 class="title-3">Udemig</h3>
+    <h4 class="title-4">Udemig</h4>
+
+    <h1 class="title-1">Udemig</h1>
+    <h2 class="title-2">Udemig</h2>
+    <h3 class="title-3">Udemig</h3>
+    <h4 class="title-4">Udemig</h4>
+
+    <!-- ? Extend Örneği -->
+
+    <div class="btn-wrapper">
+      <button>Eğitimler</button>
+      <button>Projeler</button>
+      <button>Sosyal Medya</button>
+      <button>Mevzunlar</button>
+    </div>
+
+    <div class="span-wrapper">
+      <span>Ali</span>
+      <span>Mehmet</span>
+      <span>Burak</span>
+      <span>Enes</span>
+      <span>Emir</span>
+    </div>
+
+    <!-- ? Nesting (İç içe) Yazım Örneği -->
+
+    <div class="header">
+      <div class="logo">
+        <img src="/assets/logo.png" alt="logo" />
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-house"></i>
+              <span>Ana Sayfa</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span>Hakkımızda</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-phone"></i>
+              <span>İletişim</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-book"></i>
+              <span>Kurslar</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="card">
+      <div class="card-top">Top</div>
+      <div class="card-center">Center</div>
+      <div class="card-bottom">Bottom</div>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="page">
+      <header>
+        <h1>Heading Alanı</h1>
+      </header>
+      <main>
+        <aside class="left-aside">
+          <h1>Left</h1>
+        </aside>
+        <section class="center">
+          <h1>Center</h1>
+        </section>
+        <aside class="right-aside">
+          <h1>Right</h1>
+        </aside>
+      </main>
+      <footer>
+        <h1>Footer</h1>
+      </footer>
+    </div>
   </body>
 </html>

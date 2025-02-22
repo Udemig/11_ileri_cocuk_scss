@@ -1,3 +1,207 @@
-.title {
-  background-color: red;
+// Scss Imports
+@import "./header";
+@import "./leftAside";
+@import "./center";
+@import "./rightAside";
+@import "./footer";
+
+// Scss Variables (Değişkenler)
+
+// Scss değişkenleri sayesinde proje içerisinde bir değeri değiştireceğimiz zaman bunu çok daha kolay bir şekilde yapabiliriz.Değişkenleri proje içerisinde kullanırken ilk olarak tanımlamalı sonrasında ise bunu istenilen yerde kullanmalıyız.
+
+// Bir scss değişkeni tanımlanırken bunu $ işaretinden sonra değişkene bir isim vererek yaparız.Bu değişkenin değerini ise : sonrasında yazarak atarız.
+
+$firstColor: blue;
+$secondColor: red;
+$thirdColor: orange;
+$padding1: 25px 35px;
+$heading1FontSize: 44px;
+$heading2FontSize: 34px;
+$heading3FontSize: 24px;
+
+// Variables
+
+.title-1 {
+  background-color: $firstColor;
+  padding: $padding1;
+  font-size: $heading1FontSize;
+}
+
+.title-2 {
+  background-color: $secondColor;
+  padding: $padding1;
+  font-size: 34px;
+}
+
+.title-3 {
+  background-color: $firstColor;
+  padding: $padding1;
+  font-size: 24px;
+}
+
+.title-4 {
+  background-color: green;
+  padding: $padding1;
+  font-size: $heading1FontSize;
+}
+
+// Scss'deki extend (miras alma) yapısı ile kod tekrarı gerektiren durumlarda bunu bir class'ı miras alarak daha kolay bir şekilde hallederiz.
+
+// Miras alırken ilk olarak bir class oluşturur.Bu class altında gereken kodlamayı yaparız.Sonrasında istenen yerde '@extend [class adı]' ile bu classı çağırırız.
+
+// Extend
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-wrapper {
+  background-color: $thirdColor;
+  padding: $padding1;
+  @extend .flexBox;
+}
+
+.span-wrapper {
+  background-color: $thirdColor;
+  padding: $padding1;
+  margin: 10px 15px;
+  @extend .flexBox;
+}
+
+// Nesting Yazım
+
+// Özellikle kapsam sayısının arttığı elemanlarda en dış elemandan içerideki elemana doğru giderken stillendirmeyi doğru yapabilmek için kapsam adı sonrasında child eleman adı yazılarak stillendirme yapılır.Ama bu durumda çokca kod tekrarına düşer ve uzun uzadıya kod yazarız.Bunun önüne geçmek için scss nesting yazım kullanılır.Bu yazım türünde kapsam elemana still verildikten sonra içerisinde elemana verilecek stiller {} ile ayrılarak bu elemanada verilir.Bu sayede daha hızlı stillendirme yapılır.
+
+// header {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin-top: 100px;
+//   background-color: #dcd7c9;
+//   padding: 20px;
+// }
+
+// header .logo {
+//   padding: 10px;
+//   border: 1px solid purple;
+// }
+
+// header .logo img {
+//   width: 80px;
+// }
+
+// header nav {
+//   padding: 10px;
+// }
+
+// header nav ul {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 10px;
+//   list-style: none;
+// }
+
+// header nav ul li {
+//   display: flex;
+//   align-items: center;
+//   column-gap: 40px;
+// }
+
+// header nav ul li a {
+//   color: black;
+//   text-decoration: none;
+//   font-size: 15px;
+//   cursor: pointer;
+// }
+
+// header nav ul li a:hover {
+//   scale: 1.3;
+// }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  background-color: #dcd7c9;
+  padding: 20px;
+
+  // Logo
+  .logo {
+    padding: 10px;
+    border: 1px solid purple;
+    // Image
+    img {
+      width: 80px;
+    }
+  }
+  // Nav
+  nav {
+    padding: 10px;
+
+    // Ul
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      list-style: none;
+
+      // Li
+      li {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        a {
+          color: black;
+          text-decoration: none;
+          font-size: 15px;
+          cursor: pointer;
+          &:hover {
+            scale: 1.3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 200px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  &-top {
+    background-color: red;
+  }
+
+  &-center {
+    background-color: yellowgreen;
+  }
+
+  &-bottom {
+    background-color: deeppink;
+  }
+}
+
+// Scss'de modüler dosya yönetimi ile birden fazla scss dosyası kullanarak daha kolay bir stillendirme yaparız.Bunun için bir tane ana scss dosyası seçilir.Bunun haricindeki scss dosyaları oluşturulurken bunların isimlendirmesi _ ile başlar.Diğer scss dosyalarındaki stillerin geçerli olması için bunu ana scss dosyasında import ederiz.
+
+// Modüler Dosya Yönetimi
+
+.page {
+  width: 100%;
+  height: 50vh;
+  background-color: #a27b5c;
+}
+
+main {
+  display: flex;
+  height: 100%;
 }
