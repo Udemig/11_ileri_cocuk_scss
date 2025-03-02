@@ -1,0 +1,90 @@
+@import "./variables";
+
+header {
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    // Logo
+    .logo {
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: $text-color;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+    // Menu
+    &__menu {
+      @media (max-width: $tablet) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: $white;
+        width: 70%;
+        height: 100vh;
+        padding: 4rem 0 0 3rem;
+        box-shadow: -1px 0 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease-in-out;
+      }
+      &.show-menu {
+        right: 0;
+      }
+    }
+
+    // List
+    &__list {
+      display: flex;
+      gap: 2rem;
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        row-gap: 1.5rem;
+      }
+    }
+
+    // Item
+    &__item {
+      color: $text-color;
+      font-weight: 500;
+      transition: $transition;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    // Menu Btn
+    #menu-btn {
+      font-size: 1.5rem;
+      display: none;
+      cursor: pointer;
+      color: $text-color;
+      @media (max-width: $tablet) {
+        display: block;
+      }
+    }
+
+    // Close Btn
+
+    #close-btn {
+      display: none;
+
+      @media (max-width: $tablet) {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
