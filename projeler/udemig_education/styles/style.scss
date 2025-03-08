@@ -1,0 +1,27 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+// Scss Imports
+@import "./variables";
+
+// Css Sıfırlamaları
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a {
+  color: $text-color;
+}
