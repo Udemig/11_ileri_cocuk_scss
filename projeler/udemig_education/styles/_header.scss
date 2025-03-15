@@ -1,0 +1,82 @@
+header {
+  @extend .flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 27px 17px;
+  z-index: 100;
+
+  // Logo
+  .logo {
+    font-size: 33px;
+    font-weight: 700;
+    // span
+    span {
+      color: $main-color;
+    }
+  }
+
+  // Nav
+  nav {
+    @extend .flex;
+    gap: 10px;
+
+    li {
+      a {
+        font-size: $p-font;
+        font-weight: 500;
+        margin: 15px 22px;
+        text-transform: uppercase;
+        @extend .transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  // Social Media
+  .social-media {
+    @extend .flex;
+
+    a {
+      font-size: 20px;
+      margin-right: 18px;
+      margin-left: 5px;
+      @extend .transition;
+
+      &:hover {
+        color: $main-color;
+        transform: translateY(-3px);
+      }
+    }
+    a:first-child {
+      font-size: $p-font;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  nav a {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  header {
+    justify-content: center;
+    .logo {
+      display: block !important;
+    }
+  }
+  a {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .logo {
+    font-size: 25px;
+  }
+}
