@@ -51,7 +51,7 @@ header .social-media a:first-child {
   header .logo {
     display: block !important;
   }
-  a {
+  header a {
     display: none;
   }
 }
@@ -145,6 +145,199 @@ header .social-media a:first-child {
   color: #ffa343;
 }
 
+.about-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9rem;
+}
+.about-us .about-us-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-us .about-us-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.about-us .about-us-text h5 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffa343;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.about-us .about-us-text h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+.about-us .about-us-text p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6705882353);
+  margin-bottom: 35px;
+}
+
+@media (max-width: 1000px) {
+  .about-us {
+    grid-template-columns: 1fr;
+  }
+  .about-us .about-us-image img {
+    max-width: 300px;
+  }
+  .about-us .about-us-text {
+    text-align: center;
+  }
+}
+.top-education .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-education h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.top-education .btn {
+  margin-top: 40px;
+}
+.top-education .educations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+.top-education .educations .education-card {
+  position: relative;
+}
+.top-education .educations .education-card:hover > img {
+  transform: scale(1.05);
+}
+.top-education .educations .education-card img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  filter: brightness(70%);
+  cursor: pointer;
+}
+.top-education .educations .education-card .content {
+  position: absolute;
+  bottom: 45px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.top-education .educations .education-card .content h3 {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-education .educations .education-card .content h3 i {
+  color: #ffa343;
+}
+
+.contact-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+.contact-us .contact-us-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.contact-us form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.contact-us form label {
+  margin-bottom: 20px;
+}
+.contact-us form input,
+.contact-us form button {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.contact-us form button {
+  background-color: #f8a041;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.contact-us form button:hover {
+  background-color: #a48032;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .contact-us {
+    grid-template-columns: 1fr;
+  }
+}
+footer {
+  padding: 40px;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 2rem;
+}
+footer .footer-container .footer-box {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-container .footer-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+footer .footer-container .footer-box a {
+  color: #979797;
+  margin-bottom: 0.8rem;
+}
+footer .footer-container .footer-box a:hover {
+  color: #ffffff;
+  transform: translateX(-5px);
+}
+footer .footer-container .footer-box .socials a {
+  display: inline-flex;
+  height: 45px;
+  width: 45px;
+  background-color: #202020;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+}
+footer .footer-container .footer-box .socials a:hover {
+  background-color: #ffa343;
+  color: #000000;
+  transform: translateX(-4px);
+}
+footer .copyright {
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #979797;
+  margin-top: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -171,7 +364,7 @@ a {
   align-items: center;
 }
 
-.transition, .btn, header nav li a, header .social-media a, .educations .education-content .course-card .course-image img, .educations .education-content .course-card h4 {
+.transition, .btn, header nav li a, header .social-media a, .educations .education-content .course-card .course-image img, .educations .education-content .course-card h4, .top-education .educations .education-card img, .contact-us form button, footer .footer-container .footer-box a {
   transition: all 0.5s ease;
 }
 

@@ -1,0 +1,50 @@
+.contact-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+  // Image
+  .contact-us-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  // Form
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    label {
+      margin-bottom: 20px;
+    }
+
+    input,
+    button {
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #f8a041;
+      font-size: 16px;
+      margin-top: 20px;
+      @extend .transition;
+      &:hover {
+        background-color: #a48032;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact-us {
+    grid-template-columns: 1fr;
+  }
+}
