@@ -1,0 +1,173 @@
+@import "./footer";
+
+// Scss Değişkenleri
+
+$primary-color: #2db4a0; // Değişken tanımlandı
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: $primary-color; // Değişkenin kullanılması
+  display: grid;
+  place-items: center;
+  margin: 20px;
+}
+
+.box-1 {
+  width: 200px;
+  height: 200px;
+  background-color: $primary-color; // Değişkenin kullanılması
+  display: grid;
+  place-items: center;
+  margin: 20px;
+}
+
+// Mixin
+
+// Mixin tanımlandı
+@mixin button {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn-1 {
+  @include button; // Mixin kullanıldı
+  background-color: green;
+}
+.btn-1:hover {
+  transform: scale(0.8);
+}
+.btn-2 {
+  @include button; // Mixin kullanıldı
+  background-color: tomato;
+}
+.btn-2:hover {
+  transform: translateY(-10px);
+}
+
+// Nesting Yazım
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  border: 3px solid gray;
+  width: 300px;
+  border-radius: 10px;
+  // Image
+  &-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  // Content
+  &-content {
+    text-align: center;
+    padding: 20px;
+    &-title {
+      font-size: 45px;
+    }
+    &-desc {
+      font-size: 18px;
+      color: gray;
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      button {
+        @include button;
+        &:first-child {
+          background-color: tomato;
+        }
+
+        &:last-child {
+          background-color: rgba(102, 51, 153, 0.677);
+        }
+      }
+    }
+  }
+}
+/*
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  border: 3px solid gray;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+ 
+.card .card-content {
+  text-align: center;
+  padding: 20px;
+}
+  
+.card .card-content .card-title {
+  font-size: 45px;
+}
+
+.card .card-content .card-desc {
+  font-size: 18px;
+  color: gray;
+}
+
+.card .card-content .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card .card-content .buttons button {
+  @include button;
+}
+
+.card .card-content .buttons button:first-child {
+  background-color: tomato;
+}
+
+.card .card-content .buttons button:last-child {
+  background-color: rgba(102, 51, 153, 0.677);
+}
+   */
+
+// Extend
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-container {
+  margin-top: 50px;
+  background-color: $primary-color;
+  height: 150px;
+  padding: 20px;
+  @extend .flexbox;
+}
+
+.text-container {
+  background-color: magenta;
+  padding: 10px 20px;
+  margin: 40px 0;
+  @extend .flexbox;
+}
